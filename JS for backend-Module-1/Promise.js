@@ -1,5 +1,5 @@
 
-
+//Module 2.  Handleing multiple Promises. 
 const myPromise = new Promise((resolved, rejected) => {
     const user = {name: "iqbal", id: 1};
     if (!user) {
@@ -7,7 +7,7 @@ const myPromise = new Promise((resolved, rejected) => {
     }
     else {
         setTimeout(() => {
-            resolved("Successfully got data")
+            resolved({name: "john"})
         }, 2000);
     }
 });
@@ -19,3 +19,16 @@ myPromise
  .catch(res => console.log("From catch: ", res));
 
  // Consuming promise is actually executing promises. There is three sate of consuming promises. if data is resloved will have in .then. if not found any data it will be in .catch method.
+
+
+ const userIds = [1, 2, 3, 4, 5, 6];
+ const userData = [];
+
+ for(let i = 0; i < userIds.length; i++){
+    const newData = userIds[i];
+    
+    setTimeout(() => {
+        userData.push(newData);
+    }, 500)
+ }
+
